@@ -111,13 +111,13 @@ Shader "Water/WaterShader"
 
               
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 4; i++)
                 {
                    // posと球との最短距離
                    float dist = getDistance(pos);
 
                    // 距離が0.05以下になったら、色と深度を書き込んで処理終了
-                   if (dist < 0.1)
+                   if (dist < 0.2)
                    {
                         fixed3 norm = getNormal(pos); // 法線
                         fixed3 baseColor =  fixed4(0.9, 0.8, 0.6, 1); // ベースとなる色
