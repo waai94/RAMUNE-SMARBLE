@@ -9,13 +9,20 @@ public class CurrentInputTest : MonoBehaviour
     [SerializeField] float Ikioi = 1f;
     float NeedTilt = 0;
     float MinNeedTilt = 90;
-    float MaxNeedTilt = 150;
+    float MaxNeedTilt = 90;
+    float MaxSosogi = 900f;
+    BoxCollider child;
+
+    public bool isHitToGlass;
+    bool cap = true;
 
     GameObject glass;
     GlassScript GS;
+
+    public Transform[] childTransforms;
     private void Start()
     {
-       resetData();
+        child = GetComponentInChildren<BoxCollider>();
 
 
     }
@@ -52,12 +59,25 @@ public class CurrentInputTest : MonoBehaviour
         
            // Debug.Log(NeedTilt + " DOBODOBO "+nowAngle);
 
-            if (nowAngle >= NeedTilt)
+            if (nowAngle >= NeedTilt&&isHitToGlass&&!cap)
             {
-                print("YOU ARE DOBODOBO");
-           
-                GS.NowGlassTaiseki += 1;
-            }
+
+            float sosogi = MaxSosogi*Ikioi*((nowAngle-NeedTilt)/90)*Time.deltaTime;
+           // Debug.Log(sosogi+"ml注いでおります。");
+            if (PlayerNum == 1)
+                {
+                GS.d1 += sosogi;
+                }
+            else
+                {
+                GS.d2 += sosogi;
+                }
+
+        }
+        else
+        {
+            cap = false;
+        }
 
         
     
@@ -66,13 +86,18 @@ public class CurrentInputTest : MonoBehaviour
 
     }
 
-    public void resetData()
-    {
+    public void resetData(GameObject g)  {//新しいグラスが出るたびに変数をリセットする
         NeedTilt = Random.Range(MinNeedTilt, MaxNeedTilt);
-        glass = GameObject.FindGameObjectWithTag("glass");
+        glass = g;
         GS = glass.GetComponent<GlassScript>();
+
+        Ikioi = Random.Range(0.5f, 1.5f);
+        cap = true;
+        isHitToGlass = false;
 
 
 
     }
+
+    
 }
