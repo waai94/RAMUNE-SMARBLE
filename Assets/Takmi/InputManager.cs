@@ -6,21 +6,72 @@ public class CurrentInputTest : MonoBehaviour
     float movin = 0;
     [SerializeField] int PlayerNum = 1;
     [SerializeField] float speed = 2;
+    [SerializeField] float Ikioi = 1f;
+    float NeedTilt = 0;
+    float MinNeedTilt = 90;
+    float MaxNeedTilt = 150;
+
+    GameObject glass;
+    GlassScript GS;
+    private void Start()
+    {
+       resetData();
+
+
+    }
     void Update()
     {
-        print(Input.GetAxis("Horizontal" + PlayerNum));
+   
         movin = Input.GetAxis("Horizontal" + PlayerNum);
 
         this.transform.position+=new Vector3(movin*speed, 0, 0)*Time.deltaTime;
 
+        //Ç±Ç±Ç‹Ç≈à⁄ìÆ
+
         float tilt = (Input.GetAxis("Tilt" + PlayerNum)+1)*0.5f;
         if (PlayerNum == 1)
         {
-            tilt *= -1;
+            tilt *= 1f;
+           
         }
         Vector3 localAngle = this.transform.localEulerAngles;
-        localAngle.z = Mathf.Lerp(0, 180, tilt);
+        if(PlayerNum == 1)
+        {
+            localAngle.z = Mathf.Lerp(0, -180, tilt);
+        }
+        else
+        {
+            localAngle.z = Mathf.Lerp(0, 180, tilt);
+        }
         this.transform.eulerAngles = localAngle;
+        // Ç±Ç±Ç‹Ç≈âÒì]
+
+
+        float nowAngle = Mathf.Abs(localAngle.z);
+       
+        
+           // Debug.Log(NeedTilt + " DOBODOBO "+nowAngle);
+
+            if (nowAngle >= NeedTilt)
+            {
+                print("YOU ARE DOBODOBO");
+           
+                GS.NowGlassTaiseki += 1;
+            }
+
+        
+    
+        //Ç±Ç±Ç‹Ç≈âtëÃÇ™èoÇÈÇ©ÇÃîªíË
+
+
+    }
+
+    public void resetData()
+    {
+        NeedTilt = Random.Range(MinNeedTilt, MaxNeedTilt);
+        glass = GameObject.FindGameObjectWithTag("glass");
+        GS = glass.GetComponent<GlassScript>();
+
 
 
     }
