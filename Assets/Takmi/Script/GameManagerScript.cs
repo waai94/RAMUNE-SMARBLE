@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour
     public Animator tastyanim;
 
     float[] result;
-    int scoreNum = 0;
+   public int scoreNum = 0;
     float lastscore = 0;
     // Start is called before the first frame update
     void Start()
