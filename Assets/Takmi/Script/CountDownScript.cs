@@ -10,10 +10,12 @@ public class CountDownScript : MonoBehaviour
     [SerializeField] Text countText;
     [SerializeField] GameObject counter;
     [SerializeField] GameObject glass;
+    Animator startAnim;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating(nameof(Count),1.0f,1.0f);
+        startAnim = counter.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class CountDownScript : MonoBehaviour
         else
         {
             countText.text = "Let's go!";
+            startAnim.SetBool("start",true);
         }
        
     }
