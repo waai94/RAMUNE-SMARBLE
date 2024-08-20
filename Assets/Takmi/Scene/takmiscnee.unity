@@ -947,6 +947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tareru
       objectReference: {fileID: 0}
+    - target: {fileID: 3360161692178530073, guid: 657e12ca1979abf4b804f00359faa745, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7e12e4d7b68fb9479e9056f1934cbd9, type: 2}
     - target: {fileID: 5324939866653480998, guid: 657e12ca1979abf4b804f00359faa745, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1009,6 +1013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tareru (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3360161692178530073, guid: 657e12ca1979abf4b804f00359faa745, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f09df01cd957ad84d9d4775d14205094, type: 2}
     - target: {fileID: 4429894631081621409, guid: 657e12ca1979abf4b804f00359faa745, type: 3}
       propertyPath: PlayerNum
       value: 2

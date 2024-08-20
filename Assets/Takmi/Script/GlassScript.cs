@@ -137,7 +137,10 @@ public class GlassScript : MonoBehaviour
             failed = true;
         }
         doonce = true;
-        managerScript.made(this.gameObject, score);
+        if (managerScript!=null){
+            managerScript.made(this.gameObject, score);
+        }
+       
         goRight = true;
        
     }

@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Text coffeePercent;
     [SerializeField] Text MilkPercent;
     [SerializeField] GameObject tastyanimObject;
+    [SerializeField] GameObject finished;
+    [SerializeField] Text tastytext;
 
     public Animator tastyanim;
 
@@ -41,7 +43,7 @@ public class GameManagerScript : MonoBehaviour
     public void made(GameObject g, float score)
     {
         print("made");
-        if (scoreNum < result.Length)  // 配列の範囲内であることを確認
+        if (scoreNum < result.Length-1)  // 配列の範囲内であることを確認
         {
             result[scoreNum] = score;
             lastscore = score;
@@ -53,15 +55,32 @@ public class GameManagerScript : MonoBehaviour
 
             tastyanim.SetBool("DoAnim", true);
 
+            if (Mathf.Abs(score - 50) <= 5)
+            {
+                tastytext.text = "Tasty!";
+            }else if(Mathf.Abs(score - 50) <= 25)
+            {
+                tastytext.text = "Hummm,nice.";
+            }
+            else
+            {
+                tastytext.text = " TERRIBLE";
+            }
+
+
+
+            Instantiate(glass);
+
         }
         else
         {
             // Debug.LogWarning("Result array is full. Cannot add more scores.");
+            finished.SetActive(true);
          
         }
 
        // Destroy(g);
-        Instantiate(glass);
+       
     }
 
    public  string makestring()
