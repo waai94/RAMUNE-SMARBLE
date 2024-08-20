@@ -20,9 +20,9 @@ public class GameManagerScript : MonoBehaviour
 
     public Animator tastyanim;
 
-    float[] result;
+    public float[] result;
     public float[] okane = new float[10];
-   public int scoreNum = 0;
+    public int scoreNum = 0;
     float lastscore = 0;
 
     float lastokane = 0;
@@ -37,7 +37,7 @@ public class GameManagerScript : MonoBehaviour
             result[i] = 0f;
         }
 
-        tastyanim=tastyanimObject.GetComponent<Animator>();
+        tastyanim = tastyanimObject.GetComponent<Animator>();
 
     }
 
@@ -46,7 +46,7 @@ public class GameManagerScript : MonoBehaviour
     {
         //  Debug.Log(result.Length);
         kosuu.text = scoreNum + 1 + "/" + result.Length;
-        OkaneText.GetComponent<Text>().text = "+"+lastokane.ToString()+"yen";
+        OkaneText.GetComponent<Text>().text = "+" + lastokane.ToString() + "yen";
     }
 
     public void made(GameObject g, float score)
@@ -80,7 +80,7 @@ public class GameManagerScript : MonoBehaviour
         }
 
 
-        float kasegi = 200 + ((100 - (Mathf.Abs(score - 50f)) * 2)*2);
+        float kasegi = 200 + ((100 - (Mathf.Abs(score - 50f)) * 2) * 2);
         if (failed || g.GetComponent<GlassScript>().failed)
         {
             kasegi = 0;
@@ -88,18 +88,18 @@ public class GameManagerScript : MonoBehaviour
         kasegi = Mathf.Floor(kasegi);
         lastscore = score;
         lastokane = kasegi;
-        if (scoreNum < result.Length-1)  // 配列の範囲内であることを確認
+        if (scoreNum < result.Length - 1)  // 配列の範囲内であることを確認
         {
             result[scoreNum] = score;
 
-         
-         
-            okane[scoreNum]=kasegi;
-           
+
+
+            okane[scoreNum] = kasegi;
+
             //print("added");
             scoreNum++;
-         
-       
+
+
 
             Instantiate(glass);
 
@@ -108,25 +108,25 @@ public class GameManagerScript : MonoBehaviour
         {
             // Debug.LogWarning("Result array is full. Cannot add more scores.");
             finished.SetActive(true);
-            finished.GetComponent<Animator>().Play("TastyAnim"); 
-         
+            finished.GetComponent<Animator>().Play("TastyAnim");
+
         }
 
-       // Destroy(g);
-       
+        // Destroy(g);
+
     }
 
-   public  string makestring()
+    public string makestring()
     {
-        string scoremozi="";
-        foreach(float i in result)
+        string scoremozi = "";
+        foreach (float i in result)
         {
-            scoremozi = scoremozi + i.ToString("f1")+"%  ";
+            scoremozi = scoremozi + i.ToString("f1") + "%  ";
         }
 
-        
-        return (lastscore+"%   "+(100-lastscore)+"%");
 
-      
+        return (lastscore + "%   " + (100 - lastscore) + "%");
+
+
     }
 }
