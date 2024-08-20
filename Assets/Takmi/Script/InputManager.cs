@@ -10,7 +10,7 @@ public class CurrentInputTest : MonoBehaviour
     float NeedTilt = 0;
     float MinNeedTilt = 90;
     float MaxNeedTilt = 90;
-    float MaxSosogi = 900f;
+    float MaxSosogi = 60f;
     BoxCollider child;
 
     public bool isHitToGlass;

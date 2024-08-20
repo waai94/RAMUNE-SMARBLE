@@ -7,7 +7,7 @@ public class ChangeColor : MonoBehaviour
     [SerializeField] private Material drink1_material;
     [SerializeField] private Material drink2_material;
 
-    [SerializeField] float t = 1f;
+ public float t = 1f;
 
     Color _color;
 

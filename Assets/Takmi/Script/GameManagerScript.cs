@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
         result = new float[10];
         for (int i = 0; i < result.Length; i++)
         {
-            result[i] = 23.4f;
+            result[i] = 0f;
         }
     }
 
@@ -39,7 +39,7 @@ public class GameManagerScript : MonoBehaviour
          
         }
 
-        Destroy(g);
+       // Destroy(g);
         Instantiate(glass);
     }
 
@@ -48,7 +48,7 @@ public class GameManagerScript : MonoBehaviour
         string scoremozi="";
         foreach(float i in result)
         {
-            scoremozi = scoremozi + i.ToString()+" ";
+            scoremozi = scoremozi + i.ToString("f1")+"%  ";
         }
         return (scoremozi);
     }
