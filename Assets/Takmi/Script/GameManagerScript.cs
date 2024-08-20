@@ -8,6 +8,7 @@ public class GameManagerScript : MonoBehaviour
 
     float[] result;
     int scoreNum = 0;
+    float lastscore = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class GameManagerScript : MonoBehaviour
         if (scoreNum < result.Length)  // ”z—ñ‚Ì”ÍˆÍ“à‚Å‚ ‚é‚±‚Æ‚ðŠm”F
         {
             result[scoreNum] = score;
+            lastscore = score;
             //print("added");
             scoreNum++;
         }
@@ -50,6 +52,8 @@ public class GameManagerScript : MonoBehaviour
         {
             scoremozi = scoremozi + i.ToString("f1")+"%  ";
         }
-        return (scoremozi);
+        return (lastscore+"%");
+
+      
     }
 }
