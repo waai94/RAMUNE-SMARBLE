@@ -14,6 +14,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject tastyanimObject;
     [SerializeField] GameObject finished;
     [SerializeField] Text tastytext;
+    [SerializeField] GameObject milkanim;
+    [SerializeField] GameObject coffeeanim;
 
     public Animator tastyanim;
 
@@ -53,7 +55,11 @@ public class GameManagerScript : MonoBehaviour
             coffeePercent.text = score.ToString("f1")+"%";
             MilkPercent.text = (100-score).ToString("f1") + "%";
 
-            tastyanim.SetBool("DoAnim", true);
+            // tastyanim.SetBool("DoAnim", true);
+
+            tastyanim.Play("TastyAnim", 0, 0);
+            milkanim.GetComponent<Animator>().Play("milkanim");
+            coffeeanim.GetComponent<Animator>().Play("CoffeeAnim");
 
             if (Mathf.Abs(score - 50) <= 5)
             {
@@ -76,6 +82,7 @@ public class GameManagerScript : MonoBehaviour
         {
             // Debug.LogWarning("Result array is full. Cannot add more scores.");
             finished.SetActive(true);
+            finished.GetComponent<Animator>().Play("TastyAnim"); 
          
         }
 
