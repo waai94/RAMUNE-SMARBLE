@@ -13,7 +13,7 @@ public class LeftTrigger : MonoBehaviour
     {
         // TriggerAction‚Ì“ü—Í’l‚ðŽæ“¾
         val = value.ReadValue<float>();
-        Debug.Log(val);
+       //Debug.Log(val);
     }
 
     // Update is called once per frame
