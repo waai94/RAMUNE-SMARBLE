@@ -37,7 +37,7 @@ public class GlassScript : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("manager");
        managerScript= manager.GetComponent<GameManagerScript>();
 
-        this.transform.position = new Vector3(-30, -2f, 0);
+        this.transform.position = new Vector3(-30, -4f, 0);
 
 
         childGlass = this.transform.GetChild(1).gameObject;
@@ -93,7 +93,7 @@ public class GlassScript : MonoBehaviour
         else if(moving)
         {
             movingfloat += Time.deltaTime*1f;
-            this.transform.position = new Vector3(Mathf.Sin(movingfloat)*3f, -2f, 0);
+            this.transform.position = new Vector3(Mathf.Sin(movingfloat)*3f, -4f, 0);
         }
 
         ColorScript.t = d1 / NowGlassTaiseki;
