@@ -45,7 +45,11 @@ public class GlassScript : MonoBehaviour
         GameObject grandchild = childGlass.transform.GetChild(0).gameObject;
 
         ColorScript = grandchild.GetComponent<ChangeColor>();
-        syutugenX = Random.Range(-6f, 6);    }
+        syutugenX = Random.Range(-6f, 6);
+
+        moving = managerScript.scoreNum > 7;
+    
+    }
 
     // Update is called once per frame
     void Update()
@@ -85,7 +89,7 @@ public class GlassScript : MonoBehaviour
                 fromLeft = false;
                 times = 15f;
                 managerScript.tastyanim.SetBool("DoAnim",false);
-                print("FALSE");
+            
             ;
             ;
             }
@@ -93,7 +97,7 @@ public class GlassScript : MonoBehaviour
         else if(moving)
         {
             movingfloat += Time.deltaTime*1f;
-            this.transform.position = new Vector3(Mathf.Sin(movingfloat)*3f, -4f, 0);
+            this.transform.position = new Vector3(Mathf.Sin(movingfloat)*3f+syutugenX, -4f, 0);
         }
 
         ColorScript.t = d1 / NowGlassTaiseki;

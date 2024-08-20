@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1426802567753203327}
   - component: {fileID: 1335758379464816790}
   - component: {fileID: 4241708927744047721}
+  - component: {fileID: 6406895032829843664}
   m_Layer: 5
   m_Name: Milk
   m_TagString: Untagged
@@ -340,6 +341,27 @@ MonoBehaviour:
   m_Text: '20%
 
 '
+--- !u!95 &6406895032829843664
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670659779278801293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e85c79bc383a2054bac56962e329ccf2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3005606169021322956
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +597,7 @@ GameObject:
   - component: {fileID: 2150434291356390039}
   - component: {fileID: 8082239222876767011}
   - component: {fileID: 5709857556552976168}
+  - component: {fileID: 3406862414747324063}
   m_Layer: 5
   m_Name: Coffee
   m_TagString: Untagged
@@ -645,6 +668,27 @@ MonoBehaviour:
   m_Text: '20%
 
 '
+--- !u!95 &3406862414747324063
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382772206891140338}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57a14044bf274c5429e66290a93bc7eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7901313370573603479
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +742,10 @@ MonoBehaviour:
   tastyanimObject: {fileID: 3005606169021322956}
   finished: {fileID: 765988313856316288}
   tastytext: {fileID: 425028695117729354}
+  milkanim: {fileID: 2670659779278801293}
+  coffeeanim: {fileID: 7382772206891140338}
   tastyanim: {fileID: 0}
+  scoreNum: 0
 --- !u!1 &8412716283566908694
 GameObject:
   m_ObjectHideFlags: 0
