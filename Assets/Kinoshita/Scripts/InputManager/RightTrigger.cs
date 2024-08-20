@@ -5,14 +5,17 @@ using UnityEngine.InputSystem;
 
 public class RightTrigger : MonoBehaviour
 {
-    public static Vector2 axis = Vector2.zero;
-    float val = 0f;
+    public static float val;
+
+    private void Start()
+    {
+        val = 0;
+    }
 
     public void OnRightTrigger(InputAction.CallbackContext value)
     {
         // TriggerAction‚Ì“ü—Í’l‚ðŽæ“¾
         val = value.ReadValue<float>();
-        Debug.Log(val);
     }
 
     // Update is called once per frame
