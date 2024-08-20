@@ -10,7 +10,7 @@ public class CurrentInputTest : MonoBehaviour
     float NeedTilt = 0;
     float MinNeedTilt = 90;
     float MaxNeedTilt = 90;
-    float MaxSosogi = 60f;
+    float MaxSosogi = 120f;
     BoxCollider child;
 
     public bool isHitToGlass;
@@ -91,8 +91,10 @@ public class CurrentInputTest : MonoBehaviour
         glass = g;
         GS = glass.GetComponent<GlassScript>();
 
-        Ikioi = Random.Range(0.5f, 1.5f);
-        cap = true;
+        Ikioi = Random.Range(0.5f, 4.5f);
+        float yokoscale = Ikioi*0.5f;
+        this.transform.localScale = (new Vector3(yokoscale, 1.0f, yokoscale));
+       cap = true;
         isHitToGlass = false;
 
 

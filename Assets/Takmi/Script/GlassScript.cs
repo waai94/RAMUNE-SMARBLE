@@ -30,11 +30,14 @@ public class GlassScript : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("manager");
        managerScript= manager.GetComponent<GameManagerScript>();
 
-        this.transform.position = new Vector3(-30, 0, 0);
+        this.transform.position = new Vector3(-30, -2f, 0);
 
-        childGlass = this.transform.GetChild(2).gameObject;
 
-        ColorScript = childGlass.GetComponent<ChangeColor>();
+        childGlass = this.transform.GetChild(1).gameObject;
+
+        GameObject grandchild = childGlass.transform.GetChild(0).gameObject;
+
+        ColorScript = grandchild.GetComponent<ChangeColor>();
         
     }
 
@@ -65,6 +68,9 @@ public class GlassScript : MonoBehaviour
         }
 
         ColorScript.t = d1 / NowGlassTaiseki;
+        float scale = NowGlassTaiseki / GlassSize;
+       
+        childGlass.transform.localScale = new Vector3(1f, scale * 0.9f, 1f);
 
     }
 
