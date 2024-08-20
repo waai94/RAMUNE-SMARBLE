@@ -11,6 +11,7 @@ public class CurrentInputTest : MonoBehaviour
     float MinNeedTilt = 90;
     float MaxNeedTilt = 90;
     float MaxSosogi = 120f;
+    public float sosogi;
     BoxCollider child;
 
     public bool isHitToGlass;
@@ -62,7 +63,7 @@ public class CurrentInputTest : MonoBehaviour
             if (nowAngle >= NeedTilt&&isHitToGlass&&!cap)
             {
 
-            float sosogi = MaxSosogi*Ikioi*((nowAngle-NeedTilt)/90)*Time.deltaTime;
+            sosogi = MaxSosogi*Ikioi*((nowAngle-NeedTilt)/90)*Time.deltaTime;
            // Debug.Log(sosogi+"mlíçÇ¢Ç≈Ç®ÇËÇ‹Ç∑ÅB");
             if (PlayerNum == 1)
                 {
