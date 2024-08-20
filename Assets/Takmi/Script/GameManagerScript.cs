@@ -9,6 +9,11 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Text kosuu;
     public Text timer;
     public GameObject glass;
+    [SerializeField] Text coffeePercent;
+    [SerializeField] Text MilkPercent;
+    [SerializeField] GameObject tastyanimObject;
+
+    public Animator tastyanim;
 
     float[] result;
     int scoreNum = 0;
@@ -21,6 +26,9 @@ public class GameManagerScript : MonoBehaviour
         {
             result[i] = 0f;
         }
+
+        tastyanim=tastyanimObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -32,13 +40,19 @@ public class GameManagerScript : MonoBehaviour
 
     public void made(GameObject g, float score)
     {
-        
+        print("made");
         if (scoreNum < result.Length)  // ”z—ñ‚Ì”ÍˆÍ“à‚Å‚ ‚é‚±‚Æ‚ðŠm”F
         {
             result[scoreNum] = score;
             lastscore = score;
             //print("added");
             scoreNum++;
+         
+            coffeePercent.text = score.ToString("f1")+"%";
+            MilkPercent.text = (100-score).ToString("f1") + "%";
+
+            tastyanim.SetBool("DoAnim", true);
+
         }
         else
         {

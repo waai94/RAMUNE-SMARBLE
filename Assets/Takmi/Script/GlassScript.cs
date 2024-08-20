@@ -51,11 +51,15 @@ public class GlassScript : MonoBehaviour
     void Update()
     {
         NowGlassTaiseki = d1 + d2;
-        print(NowGlassTaiseki + "ml/" + GlassSize + "ml");
+       // print(NowGlassTaiseki + "ml/" + GlassSize + "ml");
      //   Debug.Log(NowGlassTaiseki + "ml/" +GlassSize+"ml");
         if (NowGlassTaiseki >= GlassSize&&!doonce)
         {
             filled();
+        }
+        else
+        {
+           // print(doonce);
         }
 
         if (goRight||fromLeft)
@@ -76,10 +80,14 @@ public class GlassScript : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-            if(myX >= syutugenX)
+            if(myX >= syutugenX&&fromLeft)//‰ŠúˆÊ’u‚ÉˆÚ“®
             {
                 fromLeft = false;
                 times = 15f;
+                managerScript.tastyanim.SetBool("DoAnim",false);
+                print("FALSE");
+            ;
+            ;
             }
         }
         else if(moving)
