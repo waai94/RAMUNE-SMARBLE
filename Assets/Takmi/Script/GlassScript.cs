@@ -25,7 +25,7 @@ public class GlassScript : MonoBehaviour
     float movingfloat = 0;
     float times=15;
 
-    bool failed;
+  public  bool failed;
 
 
     public float NowGlassTaiseki = 0f;
