@@ -31,8 +31,8 @@ public class CurrentInputTest : MonoBehaviour
     {
         var leftMove = LeftMove.axis; // 右スティック入力(Vector2)
         var rightMove = RightMove.axis; // 左スティック入力(Vector2)
-        var rightTrigger = RightTrigger.axis; // 右トリガー入力(float) 0～1
-        var leftTrigger = LeftTrigger.axis; // 左トリガー入力(float) 0～1
+        var rightTrigger = RightTrigger.val; // 右トリガー入力(float) 0～1
+        var leftTrigger = LeftTrigger.val; // 左トリガー入力(float) 0～1
 
         if (PlayerNum == 1)
         {
@@ -50,14 +50,14 @@ public class CurrentInputTest : MonoBehaviour
 
         float tilt = 0;
       //  print(leftTrigger.x);
-        if (PlayerNum == 1)
+        if (PlayerNum == 2)
         {
-            tilt = leftTrigger.x;
+            tilt = leftTrigger;
             
         }
         else
         {
-            tilt = rightTrigger.x;
+            tilt = rightTrigger;
         }
        
         Vector3 localAngle = this.transform.localEulerAngles;

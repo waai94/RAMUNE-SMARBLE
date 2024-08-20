@@ -16,8 +16,8 @@ public class InputTest : MonoBehaviour
     {
         var leftMove = LeftMove.axis; // 右スティック入力(Vector2)
         var rightMove = RightMove.axis; // 左スティック入力(Vector2)
-        var rightTrigger = RightTrigger.axis; // 右トリガー入力(float) 0～1
-        var leftTrigger = LeftTrigger.axis; // 左トリガー入力(float) 0～1
+        var rightTrigger = RightTrigger.val; // 右トリガー入力(float) 0～1
+        var leftTrigger = LeftTrigger.val; // 左トリガー入力(float) 0～1
 
         TF.position += new Vector3(LeftMove.axis.x, LeftMove.axis.y, 0) * Time.deltaTime;
 
