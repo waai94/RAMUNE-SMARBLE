@@ -32,7 +32,7 @@ public class GlassScript : MonoBehaviour
 
         this.transform.position = new Vector3(-30, 0, 0);
 
-        childGlass = this.transform.GetChild(0).gameObject;
+        childGlass = this.transform.GetChild(2).gameObject;
 
         ColorScript = childGlass.GetComponent<ChangeColor>();
         
