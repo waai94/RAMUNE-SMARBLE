@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
+
+    [SerializeField] Text kosuu;
+    public Text timer;
     public GameObject glass;
 
     float[] result;
@@ -22,7 +26,8 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  Debug.Log(result.Length);
+        //  Debug.Log(result.Length);
+        kosuu.text = scoreNum + 1 + "/" + result.Length;
     }
 
     public void made(GameObject g, float score)
@@ -52,7 +57,9 @@ public class GameManagerScript : MonoBehaviour
         {
             scoremozi = scoremozi + i.ToString("f1")+"%  ";
         }
-        return (lastscore+"%");
+
+        
+        return (lastscore+"%   "+(100-lastscore)+"%");
 
       
     }

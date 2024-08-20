@@ -11,6 +11,8 @@ public class GlassScript : MonoBehaviour
     [SerializeField] GameObject manager;
     [SerializeField] ChangeColor ColorScript;
 
+    float syutugenX = 0;
+
     GameObject childGlass;
 
     public float d1;
@@ -19,6 +21,11 @@ public class GlassScript : MonoBehaviour
     bool doonce;
     bool goRight=false;
     bool fromLeft = true;
+    bool moving = false;
+    float movingfloat = 0;
+    float times=15;
+
+    bool failed;
 
 
     public float NowGlassTaiseki = 0f;
@@ -38,8 +45,7 @@ public class GlassScript : MonoBehaviour
         GameObject grandchild = childGlass.transform.GetChild(0).gameObject;
 
         ColorScript = grandchild.GetComponent<ChangeColor>();
-        
-    }
+        syutugenX = Random.Range(-6f, 6);    }
 
     // Update is called once per frame
     void Update()
@@ -54,23 +60,47 @@ public class GlassScript : MonoBehaviour
 
         if (goRight||fromLeft)
         {
-            this.transform.position += new Vector3(DefaultGlassSpeed, 0, 0) * Time.deltaTime;
-            float myX = this.transform.position.x;
+            if (failed)
+            {
+                this.transform.position += new Vector3(0, -DefaultGlassSpeed, 0) * Time.deltaTime;
+            }
+            else
+            {
+                this.transform.position += new Vector3(DefaultGlassSpeed, 0, 0) * Time.deltaTime;
+            }
 
-            if (myX >= 25f)
+            float myX = this.transform.position.x;
+            float myY = this.transform.position.y;
+
+            if (myX >= 25f||myY<=-10f)
             {
                 Destroy(this.gameObject);
             }
-            if(myX >= 0)
+            if(myX >= syutugenX)
             {
                 fromLeft = false;
+                times = 15f;
             }
+        }
+        else if(moving)
+        {
+            movingfloat += Time.deltaTime*1f;
+            this.transform.position = new Vector3(Mathf.Sin(movingfloat)*3f, -2f, 0);
         }
 
         ColorScript.t = d1 / NowGlassTaiseki;
         float scale = NowGlassTaiseki / GlassSize;
        
         childGlass.transform.localScale = new Vector3(1f, scale * 0.9f, 1f);
+
+        times -= Time.deltaTime;
+        managerScript.timer.text = times.ToString("f1");
+        if (times <= 0f&&!doonce)
+        {
+            failed=true;
+            filled();
+            
+        }
 
     }
 
@@ -86,9 +116,21 @@ public class GlassScript : MonoBehaviour
 
     void filled()
     {
-        float score = (d1 / (d1 + d2) * 100);
+        float score = 0;
+
+       
+
+        if (!failed)
+        {
+             score = (d1 / (d1 + d2) * 100);
+        }
+        if (Mathf.Abs(score - 50) >= 25)
+        {
+            failed = true;
+        }
         doonce = true;
         managerScript.made(this.gameObject, score);
         goRight = true;
+       
     }
 }
