@@ -20,5 +20,8 @@ public class InputTest : MonoBehaviour
         var leftTrigger = LeftTrigger.axis; // ¶ƒgƒŠƒK[“ü—Í(float) 0`1
 
         TF.position += new Vector3(LeftMove.axis.x, LeftMove.axis.y, 0) * Time.deltaTime;
+
+
+        Debug.Log(rightTrigger);
     }
 }
