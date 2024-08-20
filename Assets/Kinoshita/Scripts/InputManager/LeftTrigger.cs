@@ -15,8 +15,9 @@ public class LeftTrigger : MonoBehaviour
 
     public void OnLeftTrigger(InputAction.CallbackContext value)
     {
-        // TriggerAction�̓��͒l���擾
+        // TriggerAction‚Ì“ü—Í’l‚ðŽæ“¾
         val = value.ReadValue<float>();
+
     }
 
     // Update is called once per frame

@@ -14,8 +14,9 @@ public class RightTrigger : MonoBehaviour
 
     public void OnRightTrigger(InputAction.CallbackContext value)
     {
-        // TriggerAction�̓��͒l���擾
+        // TriggerAction‚Ì“ü—Í’l‚ðŽæ“¾
         val = value.ReadValue<float>();
+
     }
 
     // Update is called once per frame

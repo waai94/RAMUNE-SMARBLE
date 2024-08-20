@@ -29,23 +29,42 @@ public class CurrentInputTest : MonoBehaviour
     }
     void Update()
     {
-   
-        movin = Input.GetAxis("Horizontal" + PlayerNum);
+        var leftMove = LeftMove.axis; // 右スティック入力(Vector2)
+        var rightMove = RightMove.axis; // 左スティック入力(Vector2)
+        var rightTrigger = RightTrigger.axis; // 右トリガー入力(float) 0～1
+        var leftTrigger = LeftTrigger.axis; // 左トリガー入力(float) 0～1
+
+        if (PlayerNum == 1)
+        {
+            movin = leftMove.x;
+        }
+        else
+        {
+            movin = rightMove.x;
+        }
+
 
         this.transform.position+=new Vector3(movin*speed, 0, 0)*Time.deltaTime;
 
         //ここまで移動
 
-        float tilt = (Input.GetAxis("Tilt" + PlayerNum)+1)*0.5f;
+        float tilt = 0;
+      //  print(leftTrigger.x);
         if (PlayerNum == 1)
         {
-            tilt *= 1f;
-           
+            tilt = leftTrigger.x;
+            
         }
+        else
+        {
+            tilt = rightTrigger.x;
+        }
+       
         Vector3 localAngle = this.transform.localEulerAngles;
         if(PlayerNum == 1)
         {
             localAngle.z = Mathf.Lerp(0, -180, tilt);
+            print(localAngle.z+"Angle.z "+tilt+"Tilt");
         }
         else
         {
@@ -101,6 +120,8 @@ public class CurrentInputTest : MonoBehaviour
 
 
     }
+    void OnLeftTrigger(InputAction.CallbackContext value)
+    {
 
-    
+    }    
 }
