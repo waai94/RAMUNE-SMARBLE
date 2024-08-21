@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drink1_material: {fileID: 2100000, guid: f09df01cd957ad84d9d4775d14205094, type: 2}
   drink2_material: {fileID: 2100000, guid: a7e12e4d7b68fb9479e9056f1934cbd9, type: 2}
-  t: 1
+  t: 0.5
 --- !u!1001 &7453572252813132205
 PrefabInstance:
   m_ObjectHideFlags: 0
