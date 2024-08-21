@@ -9,6 +9,8 @@ public class ResultManager : MonoBehaviour
     [SerializeField] GameObject[] setSetActiveFalse;
     [SerializeField] GameObject[] setSetActiveTrue;
     [SerializeField] GameObject[] drink;
+
+    [SerializeField] GameObject[] batu;
     bool isAwake = false;
     float time = 0;
 
@@ -48,10 +50,10 @@ public class ResultManager : MonoBehaviour
                 string l = (100 - gameManager.result[i]).ToString("f1") + "% ";
                 */
 
-                
+
             }
 
-            
+
         }
 
         IEnumerator drinkSet()
@@ -60,6 +62,11 @@ public class ResultManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.5f);
                 drink[i].SetActive(true);
+
+                if (gameManager.okane[i] == 0)
+                {
+                    batu[i].SetActive(true);
+                }
 
                 sum += gameManager.okane[i];
                 int intSum = (int)sum;
