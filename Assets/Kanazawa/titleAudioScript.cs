@@ -22,6 +22,6 @@ public class titleAudioandSceneScript : MonoBehaviour
     //ƒQ[ƒ€ƒV[ƒ“‚ÉØ‚è‘Ö‚¦‚é
     public void StartScene()
     {
-        SceneManager.LoadScene("takmiscnee");
+        SceneManager.LoadScene("takmiscnee_copy3");
     }
 }
