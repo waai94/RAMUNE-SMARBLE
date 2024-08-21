@@ -2823,6 +2823,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c85e0b7c865fd2b4885df3c065bdab57, type: 2}
     - target: {fileID: 918379049, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918379049, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
       propertyPath: fastApproximateAntialiasing.fastMode
       value: 0
       objectReference: {fileID: 0}
@@ -2914,7 +2918,8 @@ PrefabInstance:
       propertyPath: mouseXSensitivity
       value: 125
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1927095934754023319, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1927095933604403118, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
     m_AddedGameObjects: []
