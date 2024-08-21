@@ -10,6 +10,10 @@ public class GlassScript : MonoBehaviour
     [SerializeField] float DefaultGlassSpeed = 50f;
     [SerializeField] GameObject manager;
     [SerializeField] ChangeColor ColorScript;
+    AudioSource AudioSource;
+    [SerializeField] AudioClip GlassFailed;
+    [SerializeField] AudioClip GlassSuccess;
+    [SerializeField] AudioClip GlassSlide;
 
     float syutugenX = 0;
 
@@ -22,8 +26,10 @@ public class GlassScript : MonoBehaviour
     bool goRight=false;
     bool fromLeft = true;
     bool moving = false;
+
+    bool failedsoundplayed;
     float movingfloat = 0;
-    float times=15;
+    float times=10;
 
   public  bool failed;
 
@@ -37,7 +43,7 @@ public class GlassScript : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("manager");
        managerScript= manager.GetComponent<GameManagerScript>();
 
-        this.transform.position = new Vector3(-30, -4f, 0);
+        this.transform.position = new Vector3(-20, -4f, 0);
 
 
         childGlass = this.transform.GetChild(1).gameObject;
@@ -48,6 +54,10 @@ public class GlassScript : MonoBehaviour
         syutugenX = Random.Range(-6f, 6);
 
         moving = managerScript.scoreNum > 7;
+
+        AudioSource = this.GetComponent<AudioSource>();
+
+        AudioSource.PlayOneShot(GlassSlide);
     
     }
 
@@ -65,7 +75,13 @@ public class GlassScript : MonoBehaviour
         {
            // print(doonce);
         }
-
+        if (!goRight && !fromLeft)
+        {
+           
+            
+                times -= Time.deltaTime;
+           
+        }
         if (goRight||fromLeft)
         {
             if (failed)
@@ -82,18 +98,24 @@ public class GlassScript : MonoBehaviour
 
             if (myX >= 25f||myY<=-10f)
             {
-                Destroy(this.gameObject);
+                if (failed&&!failedsoundplayed)
+                {
+                    AudioSource.PlayOneShot(GlassFailed);
+                    failedsoundplayed = true;
+                }
+                Destroy(this.gameObject,1f);
             }
             if(myX >= syutugenX&&fromLeft)//èâä˙à íuÇ…à⁄ìÆ
             {
                 fromLeft = false;
-                times = 15f;
-                managerScript.tastyanim.SetBool("DoAnim",false);
+              
+               // managerScript.tastyanim.SetBool("DoAnim",false);
             
             ;
             ;
             }
         }
+        
         else if(moving)
         {
             movingfloat += Time.deltaTime*1f;
@@ -105,7 +127,7 @@ public class GlassScript : MonoBehaviour
        
         childGlass.transform.localScale = new Vector3(1f, scale * 0.9f, 1f);
 
-        times -= Time.deltaTime;
+      
         managerScript.timer.text = times.ToString("f1");
         if (times <= 0f&&!doonce)
         {
@@ -139,6 +161,11 @@ public class GlassScript : MonoBehaviour
         if (Mathf.Abs(score - 50) >= 25)
         {
             failed = true;
+        }
+
+        if (!failed)
+        {
+            AudioSource.PlayOneShot(GlassSuccess);
         }
         doonce = true;
         if (managerScript!=null){
