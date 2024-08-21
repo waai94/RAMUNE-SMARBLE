@@ -6,6 +6,7 @@ public class ParticleController : MonoBehaviour
 {
 
     [SerializeField] Transform tareru;
+    [SerializeField] bool isRight;
     ParticleSystem.EmissionModule mEmObj;
 
     // Start is called before the first frame update
@@ -23,10 +24,20 @@ public class ParticleController : MonoBehaviour
         var spr = scale.x - 0.4f;
         spr = spr * 0.7f;
 
+        var val = 0f;
+        if (isRight)
+        {
+            val = RightTrigger.val;
+        }
+        else
+        {
+            val = LeftTrigger.val;
+        }
 
-        spr *= (LeftTrigger.val - 0.2f);
 
-        var num = Mathf.Max(LeftTrigger.val - 0.53f, 0);
+        spr *= (val - 0.2f);
+
+        var num = Mathf.Max(val - 0.53f, 0);
         if (num > 0) { num += 0.4f; }
 
         mEmObj.rate = new ParticleSystem.MinMaxCurve(num * 30);
