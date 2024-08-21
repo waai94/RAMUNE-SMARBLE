@@ -18,6 +18,10 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject coffeeanim;
     [SerializeField] GameObject OkaneText;
 
+    AudioSource AS;
+
+    [SerializeField] AudioClip finishsound;
+
     public Animator tastyanim;
 
     public float[] result;
@@ -38,6 +42,8 @@ public class GameManagerScript : MonoBehaviour
         }
 
         tastyanim = tastyanimObject.GetComponent<Animator>();
+
+        AS = this.GetComponent<AudioSource>();
 
     }
 
@@ -75,7 +81,7 @@ public class GameManagerScript : MonoBehaviour
         }
         else
         {
-            tastytext.text = " Ç‚ÇËÇ»Ç®ÇµÅIÅI";
+            tastytext.text = " Miss...";
             failed = true;
         }
 
@@ -109,6 +115,7 @@ public class GameManagerScript : MonoBehaviour
             // Debug.LogWarning("Result array is full. Cannot add more scores.");
             finished.SetActive(true);
             finished.GetComponent<Animator>().Play("TastyAnim");
+            AS.PlayOneShot(finishsound);
 
         }
 
