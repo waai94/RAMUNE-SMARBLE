@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Takmi/Scene/takmiscnee.unity
     guid: dc3137a6cf9c91644a8a6915f576d36c
+  - enabled: 1
+    path: Assets/Kinoshita/Scenes/Start Scene.unity
+    guid: db4daaf7a228c1f41be850a70596a446
+  - enabled: 1
+    path: Assets/Kinoshita/Scenes/takmiscnee_copy3.unity
+    guid: c891d5b4ed31dab4493ad074fae3edc8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: dc35b636bc88e85428a48bea91effe56, type: 2}

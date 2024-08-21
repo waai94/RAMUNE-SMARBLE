@@ -48,12 +48,10 @@ public class ResultManager : MonoBehaviour
                 string l = (100 - gameManager.result[i]).ToString("f1") + "% ";
                 */
 
-                sum += gameManager.result[i];
+                
             }
 
-            int intSum = (int)sum;
-            string okane = intSum.ToString() + "YEN";
-            OkaneText.GetComponent<Text>().text = okane;
+            
         }
 
         IEnumerator drinkSet()
@@ -62,6 +60,11 @@ public class ResultManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.5f);
                 drink[i].SetActive(true);
+
+                sum += gameManager.okane[i];
+                int intSum = (int)sum;
+                string okane = intSum.ToString() + "YEN";
+                OkaneText.GetComponent<Text>().text = okane;
             }
         }
     }
