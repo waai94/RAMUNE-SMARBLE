@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 075c56416ce1cd74381d66825ee5963c, type: 3}
     m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 0
@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_Name
       value: Glass
@@ -233,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -5419,6 +5427,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: glass
       objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -5508,6 +5520,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -5753,6 +5769,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &300129006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 270655528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &483922793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
@@ -5779,7 +5800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &515641675
 Transform:
   m_ObjectHideFlags: 0
@@ -5808,16 +5829,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fluids:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1390117060}
+  - {fileID: 682172993}
+  - {fileID: 1675880796}
+  - {fileID: 1594202790}
+  - {fileID: 2128656279}
+  - {fileID: 907469070}
+  - {fileID: 1397704410}
+  - {fileID: 300129006}
+  - {fileID: 978287665}
+  - {fileID: 642801334}
   drink1_material: {fileID: 2100000, guid: f09df01cd957ad84d9d4775d14205094, type: 2}
   drink2_material: {fileID: 2100000, guid: a7e12e4d7b68fb9479e9056f1934cbd9, type: 2}
   gameManager: {fileID: 1848533983}
@@ -5983,7 +6004,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 075c56416ce1cd74381d66825ee5963c, type: 3}
     m_FontSize: 148
     m_FontStyle: 0
     m_BestFit: 0
@@ -6004,6 +6025,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640338071}
   m_CullTransparentMesh: 1
+--- !u!1 &642801334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1328092816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &644710240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6062,7 +6088,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 075c56416ce1cd74381d66825ee5963c, type: 3}
     m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 0
@@ -6261,6 +6287,11 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &682172993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 274795573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694280283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6380,6 +6411,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854923028}
   m_CullTransparentMesh: 1
+--- !u!1 &907469070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1168587611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &921049014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
@@ -11237,6 +11273,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &978287665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1534642538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1064014263
 GameObject:
   m_ObjectHideFlags: 0
@@ -11366,6 +11407,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -11599,6 +11644,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: glass
       objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -11688,6 +11737,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -12071,6 +12124,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: glass
       objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -12181,6 +12238,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1127503818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1390117060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 70530652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1397704410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1119692810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1415341792 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
@@ -12285,6 +12352,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -12440,6 +12511,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: glass
       objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -12564,7 +12639,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 075c56416ce1cd74381d66825ee5963c, type: 3}
     m_FontSize: 250
     m_FontStyle: 0
     m_BestFit: 0
@@ -12585,6 +12660,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547851825}
   m_CullTransparentMesh: 1
+--- !u!1 &1594202790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1203114629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1675880796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1818271489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1712245623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
@@ -12696,6 +12781,10 @@ PrefabInstance:
     - target: {fileID: 5026386405133438216, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_TagString
       value: glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213908475038997669, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294951281414897833, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -12950,7 +13039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1944137318
 Transform:
   m_ObjectHideFlags: 0
@@ -13136,6 +13225,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8926031131530740628, guid: 657e12ca1979abf4b804f00359faa745, type: 3}
   m_PrefabInstance: {fileID: 2123088680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2128656279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3113044263579699637, guid: 327ddeeeb6c31e44aaa236fab808e8fc, type: 3}
+  m_PrefabInstance: {fileID: 1485412636}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146002272 stripped
 GameObject:
