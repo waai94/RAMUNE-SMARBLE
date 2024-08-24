@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
 
     public float[] result;
     public float[] okane = new float[10];
-    public int scoreNum = 0;
+    public int scoreNum = -1;
     float lastscore = 0;
 
     float lastokane = 0;
@@ -36,7 +36,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         result = new float[10];
-        for (int i = 0; i < result.Length; i++)
+        for (int i = 0; i < result.Length-1; i++)
         {
             result[i] = 0f;
         }
@@ -58,6 +58,7 @@ public class GameManagerScript : MonoBehaviour
     public void made(GameObject g, float score)
     {
         print("made");
+        scoreNum++;
 
         coffeePercent.text = score.ToString("f1") + "%";
         MilkPercent.text = (100 - score).ToString("f1") + "%";
@@ -94,7 +95,7 @@ public class GameManagerScript : MonoBehaviour
         kasegi = Mathf.Floor(kasegi);
         lastscore = score;
         lastokane = kasegi;
-        if (scoreNum < result.Length - 1)  // 配列の範囲内であることを確認
+        if (scoreNum < result.Length )  // 配列の範囲内であることを確認
         {
             result[scoreNum] = score;
 
@@ -103,11 +104,14 @@ public class GameManagerScript : MonoBehaviour
             okane[scoreNum] = kasegi;
 
             //print("added");
-            scoreNum++;
 
+           
 
-
-            Instantiate(glass);
+            if (scoreNum < result.Length )
+            {
+ Instantiate(glass);
+            }
+           
 
         }
         else
