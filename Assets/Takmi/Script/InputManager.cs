@@ -44,27 +44,27 @@ public class CurrentInputTest : MonoBehaviour
         }
 
 
-        this.transform.position+=new Vector3(movin*speed, 0, 0)*Time.deltaTime;
+        this.transform.position += new Vector3(movin * speed, 0, 0) * Time.deltaTime;
 
         //ここまで移動
 
         float tilt = 0;
-      //  print(leftTrigger.x);
+        //  print(leftTrigger.x);
         if (PlayerNum == 2)
         {
             tilt = leftTrigger;
-            
+
         }
         else
         {
             tilt = rightTrigger;
         }
-       
+
         Vector3 localAngle = this.transform.localEulerAngles;
-        if(PlayerNum == 1)
+        if (PlayerNum == 1)
         {
             localAngle.z = Mathf.Lerp(0, -180, tilt);
-            print(localAngle.z+"Angle.z "+tilt+"Tilt");
+            //print(localAngle.z+"Angle.z "+tilt+"Tilt");
         }
         else
         {
@@ -75,23 +75,23 @@ public class CurrentInputTest : MonoBehaviour
 
 
         float nowAngle = Mathf.Abs(localAngle.z);
-       
-        
-           // Debug.Log(NeedTilt + " DOBODOBO "+nowAngle);
 
-            if (nowAngle >= NeedTilt&&isHitToGlass&&!cap)
-            {
 
-            sosogi = MaxSosogi*Ikioi*((nowAngle-NeedTilt)/90)*Time.deltaTime;
-           // Debug.Log(sosogi+"ml注いでおります。");
+        // Debug.Log(NeedTilt + " DOBODOBO "+nowAngle);
+
+        if (nowAngle >= NeedTilt && isHitToGlass && !cap)
+        {
+
+            sosogi = MaxSosogi * Ikioi * ((nowAngle - NeedTilt) / 90) * Time.deltaTime;
+            // Debug.Log(sosogi+"ml注いでおります。");
             if (PlayerNum == 1)
-                {
+            {
                 GS.d1 += sosogi;
-                }
+            }
             else
-                {
+            {
                 GS.d2 += sosogi;
-                }
+            }
 
         }
         else
@@ -99,29 +99,27 @@ public class CurrentInputTest : MonoBehaviour
             cap = false;
         }
 
-        
-    
+
+
         //ここまで液体が出るかの判定
 
 
     }
 
-    public void resetData(GameObject g)  {//新しいグラスが出るたびに変数をリセットする
+    public void resetData(GameObject g)
+    {
+        //新しいグラスが出るたびに変数をリセットする
         NeedTilt = Random.Range(MinNeedTilt, MaxNeedTilt);
         glass = g;
         GS = glass.GetComponent<GlassScript>();
 
         Ikioi = Random.Range(0.5f, 4.5f);
-        float yokoscale = Ikioi*0.5f;
+        float yokoscale = Ikioi * 0.5f;
         this.transform.localScale = (new Vector3(yokoscale, 1.0f, yokoscale));
-       cap = true;
+        cap = true;
         isHitToGlass = false;
 
 
 
     }
-    void OnLeftTrigger(InputAction.CallbackContext value)
-    {
-
-    }    
 }
