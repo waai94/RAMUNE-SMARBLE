@@ -31,6 +31,8 @@ public class ResultManager : MonoBehaviour
 
         if (isAwake == false && time > 2)// リザルト出すまでの時間
         {
+            Debug.Log("リザルト");
+
             isAwake = true;
             for (int i = 0; i < setSetActiveTrue.Length; i++)
             {
@@ -42,18 +44,6 @@ public class ResultManager : MonoBehaviour
             }
 
             StartCoroutine(drinkSet());
-
-            for (int i = 0; i < gameManager.result.Length; i++)
-            {
-                /*
-                string r = gameManager.result[i].ToString("f1") + "% ";
-                string l = (100 - gameManager.result[i]).ToString("f1") + "% ";
-                */
-
-
-            }
-
-
         }
 
         IEnumerator drinkSet()
