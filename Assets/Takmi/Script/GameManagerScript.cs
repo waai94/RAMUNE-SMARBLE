@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
 
     public float[] result;
     public float[] okane = new float[10];
-    public int scoreNum = -1;
+    public int scoreNum = 0;
     float lastscore = 0;
 
     float lastokane = 0;
@@ -36,7 +36,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         result = new float[10];
-        for (int i = 0; i < result.Length-1; i++)
+        for (int i = 0; i < result.Length; i++)
         {
             result[i] = 0f;
         }
@@ -51,14 +51,13 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         //  Debug.Log(result.Length);
-        kosuu.text = scoreNum + 1 + "/" + result.Length;
+        kosuu.text = scoreNum + "/" + result.Length;
         OkaneText.GetComponent<Text>().text = "+" + lastokane.ToString() + "yen";
     }
 
     public void made(GameObject g, float score)
     {
         print("made");
-        scoreNum++;
 
         coffeePercent.text = score.ToString("f1") + "%";
         MilkPercent.text = (100 - score).ToString("f1") + "%";
@@ -95,26 +94,24 @@ public class GameManagerScript : MonoBehaviour
         kasegi = Mathf.Floor(kasegi);
         lastscore = score;
         lastokane = kasegi;
-        if (scoreNum < result.Length )  // 配列の範囲内であることを確認
+        if (scoreNum < result.Length)  // 配列の範囲内であることを確認
         {
+            
             result[scoreNum] = score;
-
-
-
             okane[scoreNum] = kasegi;
+            scoreNum++;
 
             //print("added");
 
-           
 
-            if (scoreNum < result.Length )
+
+            if (scoreNum < result.Length)
             {
- Instantiate(glass);
+                Instantiate(glass);
             }
-           
-
         }
-        else
+
+        if (scoreNum == result.Length)
         {
             // Debug.LogWarning("Result array is full. Cannot add more scores.");
             finished.SetActive(true);
@@ -122,9 +119,6 @@ public class GameManagerScript : MonoBehaviour
             AS.PlayOneShot(finishsound);
 
         }
-
-        // Destroy(g);
-
     }
 
     public string makestring()
